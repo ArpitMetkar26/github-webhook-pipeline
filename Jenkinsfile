@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: '<https://github.com/ArpitMetkar26/github-webhook-pipeline>.git'
+                git branch: 'main', url: 'https://github.com/ArpitMetkar26/github-webhook-pipeline.git'
             }
         }
 
@@ -18,12 +18,12 @@ pipeline {
 
     post {
         success {
-            mail to: 'your-email@gmail.com',
+            mail to: 'arpitmetkar26@gmail.com',
                  subject: "✅ Jenkins Build SUCCESS",
                  body: "Build #${BUILD_NUMBER} succeeded."
         }
         failure {
-            mail to: 'your-email@gmail.com',
+            mail to: 'arpit.metkar@dypic.in',
                  subject: "❌ Jenkins Build FAILED",
                  body: "Build #${BUILD_NUMBER} failed."
         }
